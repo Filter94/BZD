@@ -1,12 +1,12 @@
 # BZD
 Solves BZD problems.
-# Usage
+## Usage
 Launch with console.
 First argument - input file , second argument - output file.
 Standart input / output are default. 
 If there is some error, try to check your input.
-#Input  
+##Input  
 Износ, расход, целевой коэффициент даты определения стоимости separated by space.
 I have no idea what that shit is, I don't know russian.
-#Output
+##Output
 First number - П, Second number - П*.
