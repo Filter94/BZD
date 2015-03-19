@@ -40,21 +40,27 @@ public class BZDProblem {
         double K = 0;
         double Ks[] = new double [PARAMS_NUMBER];
         for (int i = 0; i < PARAMS_NUMBER; i ++){
-            Ki = (params[i][2]) * WEIGHTS[i];
-            Ks[i] = Ki;
-            K += Ki;
+            if (params[i][2] != -1) {
+                Ki = (params[i][2]) * WEIGHTS[i];
+                Ks[i] = Ki;
+                K += Ki;
+            }
         }
         double Bs[] = new double [PARAMS_NUMBER];
         double BsSum = 0;
         double Bi;
         for (int i = 0; i < PARAMS_NUMBER; i ++){
-            Bi = Ks[i] / K;
-            Bs[i] = Bi;
-            BsSum += Bi;
+            if (params[i][2] != -1) {
+                Bi = Ks[i] / K;
+                Bs[i] = Bi;
+                BsSum += Bi;
+            }
         }
         double P = 0;
         for (int i = 0; i < PARAMS_NUMBER; i ++){
-            P += Ps[i] * Bs[i] / BsSum;
+            if (params[i][2] != -1) {
+                P += Ps[i] * Bs[i] / BsSum;
+            }
         }
         return P;
     }
