@@ -11,3 +11,4 @@ I have no idea what that shit is, I don't know russian.
 If there is no data write -1 three times.
 ##Output
 First number - П, Second number - П*.
+All rights reserved ©
