@@ -6,7 +6,6 @@ public class BZDProblem {
     final static int PARAM_PARTS = 3;
     double params[][] = new double [PARAMS_NUMBER][PARAM_PARTS];
     final static double WEIGHTS[] = {12, 22, 6, 12 ,8, 10, 12, 5, 4.2, 2.2, 6.6};
-    final static double WEIGHTS_SUM = 70.;
     double Ps[] = new double [PARAMS_NUMBER];
 
 
@@ -26,7 +25,13 @@ public class BZDProblem {
             Ps[i] = Pi;
             P += Pi * WEIGHTS[i];
         }
-        P /= WEIGHTS_SUM;
+        double weights_sum = 0;
+        for (int i = 0; i < PARAMS_NUMBER; i ++) {
+            if (params[i][0] != -1){
+                weights_sum += WEIGHTS[i];
+            }
+        }
+        P /= weights_sum;
         return P;
     }
 
