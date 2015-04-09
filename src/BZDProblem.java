@@ -21,7 +21,12 @@ public class BZDProblem {
         double P = 0;
         double Pi;
         for (int i = 0; i < PARAMS_NUMBER; i ++){
-            Pi = (params[i][1] + (100 - params[i][1])*params[i][0]/100);
+            if (params[i][0] != -1) {
+                Pi = (params[i][1] + (100 - params[i][1]) * params[i][0] / 100);
+            }
+            else {
+                Pi = 0;
+            }
             Ps[i] = Pi;
             P += Pi * WEIGHTS[i];
         }
